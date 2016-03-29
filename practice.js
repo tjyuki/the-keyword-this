@@ -1,17 +1,28 @@
 //We're in a job interview. Answer the following questions (try to not look at your notes unless you have to).
   // 1) What is the purpose of the 'this keyword'?
 
+/* The purpose of 'this' is to make our code more specific and clear. */
+
       //Answer
 
   // 2) What are the four rules that govern what the 'this keyword' is bound to and describe each?
+
+/* Implicit binding uses 'this' to the left of the dot at call time.
+Explicit binding uses .apply, .call, and .bind.
+Window binding attaches 'this' to global scope and is rarely used.
+The fourth rule is new binding that uses 'this' with prototypes. */
 
       //Answer
 
   // 3) What is the difference between call and apply?
 
+/* Apply deals with arrays, call cannot. */
+
       //Answer
 
   // 4) What does .bind do?
+
+/* Bind makes it possible to set 'this' on methods. */
 
       //Answer
 
@@ -25,14 +36,33 @@
 
     //Code Here
 
-//Now, invoke the getUsername method and verify you got the username of the object and not anything else.
+var user = {
+  username: "tjyuki",
+  email: "tamiyukiko12@gmail.com",
+  getUsername: function() {
+    return this.username;
+  }
+}
 
+
+
+//Now, invoke the getUsername method and verify you got the username of the object and not anything else.
+user.getUsername();
 
 //Next Problem
 
 
 // Write the function definitions which will make the following function invocations function properly.
 
+function Car (make,model,year) {
+    this.make = make;
+    this.model = model;
+    this.year = year;
+    this.move = 0;
+  this.moveCar = function() {
+    return this.move += 10;
+  }
+}
   //Function Invocations Here
 
 var prius = new Car('Toyota', 'Prius', 2011);
